@@ -4,16 +4,17 @@ import json
 
 file_path = "inputs.json"
 
-
+credit_cards_supported = ["Chase", "American Express"]
+products_in_catalog = ["Nike Shoes", "Sony Headphones", "North Face Jacket"]
 def get_inputs_from_user():
 
     with st.sidebar:
         # Input for Product Name
-        product_name = st.text_input("Enter Product Name")
+        product_name = st.selectbox("Enter/Select Product Name", products_in_catalog)
 
         # Input for Credit Cards Owned
-        credit_cards_owned = st.selectbox("Select the Number of Credit Cards Owned", [0, 1, 2, 3, 4, 5])
-
+        credit_cards_owned = st.multiselect("Select Credit Cards Owned", credit_cards_supported)
+        
         # Input for Price Range
         price_range = st.slider("Select Price Range", 0, 100, (0, 100))
 
