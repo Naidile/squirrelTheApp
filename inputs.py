@@ -3,9 +3,10 @@ import json
 
 
 file_path = "inputs.json"
-
 credit_cards_supported = ["Chase", "American Express"]
 products_in_catalog = ["Nike Shoes", "Sony Headphones", "North Face Jacket"]
+
+
 def get_inputs_from_user():
 
     with st.sidebar:
@@ -17,7 +18,7 @@ def get_inputs_from_user():
         
         # Input for Price Range
         price_range = st.slider("Select Price Range", 0, 100, (0, 100))
-
+        
         search = st.button("Search")
 
         inputs = {"product_name": product_name, 
@@ -32,9 +33,6 @@ def get_inputs_from_user():
 
 def store_inputs():
     inputs = get_inputs_from_user()
-    
-    
-
     if inputs["search"]:
         with open(file_path, "w") as json_file:
             json.dump(inputs, json_file)
