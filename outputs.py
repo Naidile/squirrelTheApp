@@ -16,8 +16,10 @@ def display_outputs(outputs):
     '''Displays the outputs in the desired format'''
 
     #Dummy Output - Start
-    st.write(f"The Inputs are: \n\n product_name: {outputs['product_name']} \n\n credit_cards_owned: {outputs['credit_cards_owned']} \n\n price_range_lower: {outputs['price_range_lower']} \n\n price_range_upper: {outputs['price_range_upper']}")
+    st.write(f"Product Searched: {outputs['product_name']} \n\n Credit Cards Owned: {outputs['credit_cards_owned']} \n\n Price Range: {outputs['price_range_lower']} USD - {outputs['price_range_upper']} USD")
     col1, col2 = st.columns(2)
+    col1.header("Amazon")
+    col2.header("Dick's Sporting Goods")
 
     # Insert product 1 details in the first column
     with col1:
@@ -28,6 +30,7 @@ def display_outputs(outputs):
     with col2:
         st.image('/Users/naidilemurali/Documents/squirrelTheApp/images/nike-2.png', use_column_width=True)
         st.write('Price: $75.99')
+
     #Dummy Output - End
 
 
