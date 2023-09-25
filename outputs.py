@@ -21,12 +21,12 @@ def display_outputs(outputs):
 
     # Insert product 1 details in the first column
     with col1:
-        st.image('product1.jpg', use_column_width=True)
+        st.image('/Users/naidilemurali/Documents/squirrelTheApp/images/nike-1.png', use_column_width=True)
         st.write('Price: $19.99')
 
     # Insert product 2 details in the second column
     with col2:
-        st.image('product2.jpg', use_column_width=True)
+        st.image('', use_column_width=True)
         st.write('Price: $24.99')
     #Dummy Output - End
 
