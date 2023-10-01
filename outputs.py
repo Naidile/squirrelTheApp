@@ -1,6 +1,7 @@
 import streamlit as st
 import json
 from inputs import *
+import pandas as pd
 
 def generate_outputs(inputs):
     '''Contains the logic to generate outputs using inputs'''
@@ -19,7 +20,16 @@ def display_outputs(outputs):
     st.write(f"Product Searched: {outputs['product_name']} \n\n Credit Cards Owned: {outputs['credit_cards_owned']} \n\n Price Range: {outputs['price_range_lower']} USD - {outputs['price_range_upper']} USD")
     outputCases(outputs)
     st.write("Credit Card Offers")
-    #Dummy Output - End
+    # Create a sample dataframe
+    df = pd.DataFrame({
+        "Credit Card": ["AMEX", "Chase 1", "Chase Platinum", "Chase REG"],
+        "Offer": ["25%", "20%", "15%", "10%"],
+        "Promo Code": ["CRED1", "CRED2", "CRED3", "CRED4"]
+    })
+
+    # Display the dataframe in the first column
+    col1, col2 = st.columns([5, 1]) # Adjust the ratio of the column widths as needed
+    col1.dataframe(df)
 
 
 def show_outputs():
@@ -49,12 +59,12 @@ def outputCases(inputs):
 
         # Insert product 1 details in the first column
         with col1:
-            st.image('/Users/naidilemurali/Documents/squirrelTheApp/images/nike-1.png', use_column_width=True)
+            st.image('/Users/naidilemurali/Documents/squirrelTheApp/images/sony-1.png', use_column_width=True)
             st.write('Price: $220.00')
 
         # Insert product 2 details in the second column
         with col2:
-            st.image('/Users/naidilemurali/Documents/squirrelTheApp/images/nike-2.png', use_column_width=True)
+            st.image('/Users/naidilemurali/Documents/squirrelTheApp/images/sony-2.png', use_column_width=True)
             st.write('Price: $235.0')
     else:
         col1.header("Macy's")
@@ -62,11 +72,11 @@ def outputCases(inputs):
 
         # Insert product 1 details in the first column
         with col1:
-            st.image('/Users/naidilemurali/Documents/squirrelTheApp/images/nike-1.png', use_column_width=True)
+            st.image('/Users/naidilemurali/Documents/squirrelTheApp/images/nf-1.png', use_column_width=True)
             st.write('Price: $300.99')
 
         # Insert product 2 details in the second column
         with col2:
-            st.image('/Users/naidilemurali/Documents/squirrelTheApp/images/nike-2.png', use_column_width=True)
+            st.image('/Users/naidilemurali/Documents/squirrelTheApp/images/nf-2.png', use_column_width=True)
             st.write('Price: $315.99')
 

@@ -17,7 +17,7 @@ def get_inputs_from_user():
         credit_cards_owned = st.multiselect("Select Credit Cards Owned", credit_cards_supported)
         
         # Input for Price Range
-        price_range = st.slider("Select Price Range", 0, 100, (0, 100))
+        price_range = st.slider("Select Price Range", 0, 1000, (0, 1000))
         
         search = st.button("Search")
 
