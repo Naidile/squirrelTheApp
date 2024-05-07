@@ -1,0 +1,5 @@
+#conda create --name Squirrel python=3.10 --file requirements.txt
+# conda activate Squirrel
+numpy
+pandas
+streamlit
